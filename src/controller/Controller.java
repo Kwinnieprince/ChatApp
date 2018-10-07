@@ -38,8 +38,8 @@ public class Controller extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         String destination = "index.jsp";
+		RequestHandler handler = null;
         if (action != null) {
-        	RequestHandler handler;
         	try {
         		handler = controllerFactory.getController(action, model);
 				destination = handler.handleRequest(request, response);
@@ -51,6 +51,10 @@ public class Controller extends HttpServlet {
         		destination="index.jsp";
         	}
         }
+        if(handler instanceof AsynchroonRequestHandler) {
+        	return ;
+		}
+
         RequestDispatcher view = request.getRequestDispatcher(destination);
         view.forward(request, response);
 	}

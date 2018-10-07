@@ -17,24 +17,27 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private Role role;
+	private String status;
 
 	public Person(String userId, String password, String firstName,
-			String lastName,Role role) {
+			String lastName,Role role, String status) {
 		setUserId(userId);
 		setHashedPassword(password);
 		setFirstName(firstName);
 		setLastName(lastName);
 		setRole(role);
+		setStatus(status);
 	}
 
 	public Person(String userId, String password, String salt,
-			String firstName, String lastName,Role role) {
+			String firstName, String lastName,Role role, String status) {
 		setUserId(userId);
 		setPassword(password);
 		setSalt(salt);
 		setFirstName(firstName);
 		setLastName(lastName);
 		setRole(role);
+		setStatus(status);
 	}
 
 	public Person() {
@@ -149,4 +152,14 @@ public class Person {
 		this.lastName = lastName;
 	}
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+	    if (status.isEmpty()){
+	        throw  new IllegalArgumentException("no status given");
+        }
+        this.status = status;
+    }
 }
