@@ -13,8 +13,7 @@ import domain.PersonService;
 public class LogIn extends SynchroonRequestHandler {
 
 	@Override
-	public String handleRequest(HttpServletRequest request,
-			HttpServletResponse response) {
+	public String handleRequest(HttpServletRequest request,	HttpServletResponse response) {
 		String destination = "index.jsp";
 		List<String> errors = new ArrayList<String>();
 		
@@ -45,8 +44,7 @@ public class LogIn extends SynchroonRequestHandler {
 		return destination;	
 	}
 	
-	private void createSession(Person person, HttpServletRequest request,
-			HttpServletResponse response) {
+	private void createSession(Person person, HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		session.setAttribute("user", person);
 	}

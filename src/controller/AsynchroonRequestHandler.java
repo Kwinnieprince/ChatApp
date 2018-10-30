@@ -2,7 +2,9 @@ package controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import domain.Person;
 import domain.PersonService;
+import domain.Role;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +13,14 @@ import java.util.List;
 
 public abstract class AsynchroonRequestHandler implements RequestHandler{
     private PersonService personService;
+
+    protected boolean isFromUserWithRole(HttpServletRequest request, Role role) {
+        Person person = (Person) request.getSession().getAttribute("user");
+        if (person != null && person.getRole().equals(role)) {
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public abstract String handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException;

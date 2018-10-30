@@ -10,5 +10,5 @@
 
 <p>Welcome ${user.getFirstName()}!</p>
 
-<p>Status:<p id="statusText"></p></p>
+<p style="display: flex;">Status:<p id="statusText" name="statusText"></p></p>
 <p>Change status: <input type="text" id="statusInput" name="statusInput"> <button id="statusButton">Submit</button></p>
