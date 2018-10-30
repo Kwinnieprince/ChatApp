@@ -2,31 +2,31 @@ window.onload = getStatus;
 let button = document.getElementById("statusButton");
 button.onclick = changeStatus;
 
-let changeQuote = new XMLHttpRequest();
+let  xHRObjectChangeStatus = new XMLHttpRequest();
 
 function changeStatus() {
     let newStatus = document.getElementById("statusInput").value;
 
     if (newStatus !== "") {
-        changeQuote.open("POST", "Controller?action=ChangeStatus&statusText=" + encodeURIComponent(newStatus), true);
-        changeQuote.setRequestHeader("Content-type", "application/x-www-from-urlencoded");
-        changeQuote.send();
+        xHRObjectChangeStatus.open("POST", "Controller?action=ChangeStatus&statusText="+encodeURIComponent(newStatus), true);
+        xHRObjectChangeStatus.setRequestHeader("Content-type", "application/x-www-from-urlencoded");
+        xHRObjectChangeStatus.send();
         document.getElementById("statusText").innerText = newStatus;
     }
 }
 
-let getQuote = new XMLHttpRequest();
+let xHRObjectStatus = new XMLHttpRequest();
 
 function getStatus() {
-    getQuote.open("GET", "Controller?action=getStatus");
-    getQuote.onreadystatechange = getData;
-    getQuote.send(null);
+    xHRObjectStatus.open("GET", "Controller?action=getStatus");
+    xHRObjectStatus.onreadystatechange = getData;
+    xHRObjectStatus.send(null);
 }
 
 function getData() {
-    if(getQuote.status === 200){
-        if(getQuote.readyState === 4){
-            document.getElementById("statusText").innerText = getQuote.responseText;
+    if(xHRObjectStatus.status === 200){
+        if(xHRObjectStatus.readyState === 4){
+            document.getElementById("statusText").innerText = xHRObjectStatus.responseText;
         }
     }
 }
