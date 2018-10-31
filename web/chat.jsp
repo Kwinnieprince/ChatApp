@@ -18,3 +18,4 @@
 <p>friends:</p>
 <ul id="friends"></ul>
 
+<p>Add friend: <input type="text" id="addFriend"><button id="addFriendButton">Add</button></p>
