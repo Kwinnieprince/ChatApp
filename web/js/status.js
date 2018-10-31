@@ -1,4 +1,8 @@
-window.onload = getStatus;
+window.onload = function(){
+  getStatus();
+  getFriends();
+};
+
 let button = document.getElementById("statusButton");
 button.onclick = changeStatus;
 

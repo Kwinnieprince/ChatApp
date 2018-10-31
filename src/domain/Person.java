@@ -1,12 +1,16 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +23,8 @@ public class Person {
 	private String lastName;
 	private Role role;
 	private String status;
+	@JsonIgnore
+	private Set<Person> friends = new HashSet<>();
 
 	public Person(String userId, String password, String firstName,
 			String lastName,Role role, String status) {
@@ -163,4 +169,13 @@ public class Person {
         }
         this.status = status;
     }
+
+    public Set<Person> getFriends() {
+	    return friends;
+    }
+
+    public void addFriend(Person friend) {
+        this.friends.add(friend);
+    }
+
 }

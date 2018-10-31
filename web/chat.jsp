@@ -16,6 +16,5 @@
 <p>Change status: <input type="text" id="statusInput" name="statusInput"> <button id="statusButton">Submit</button></p>
 
 <p>friends:</p>
-<ul id="friends">
+<ul id="friends"></ul>
 
-</ul>
