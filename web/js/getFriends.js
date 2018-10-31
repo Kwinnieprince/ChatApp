@@ -17,6 +17,7 @@ function showData() {
                 friendsHTML = friendsHTML + "<li>" + serverResponse[i].userId + ": " + serverResponse[i].status + "</li>";
             }
             document.getElementById("friends").innerHTML = friendsHTML;
+            setTimeout(getFriends, 20000);
         }
     }
 }

@@ -1,6 +1,6 @@
 let xHRObjectAddFriend = new XMLHttpRequest();
 let friendButton = document.getElementById("addFriendButton");
-friendButton.onclick = addFriend();
+friendButton.onclick = addFriend;
 
 
 function addFriend() {
