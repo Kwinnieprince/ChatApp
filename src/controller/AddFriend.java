@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class AddFriend extends AsynchroonRequestHandler {
     @Override
-    public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         Person user = (Person) request.getSession().getAttribute("user");
         if(user != null){
             String userId = request.getParameter("friend");

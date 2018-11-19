@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -117,15 +118,13 @@ public class Person {
 		try {
 			MessageDigest crypt = MessageDigest.getInstance("SHA-1");
 			crypt.reset();
-			crypt.update(salt.getBytes("UTF-8"));
-			crypt.update(password.getBytes("UTF-8"));
+			crypt.update(salt.getBytes(StandardCharsets.UTF_8));
+			crypt.update(password.getBytes(StandardCharsets.UTF_8));
 			hashedPassword = new BigInteger(1, crypt.digest()).toString(16);
 		} catch (NoSuchAlgorithmException e) {
 			throw new DomainException(e.getMessage(), e);
-		} catch (UnsupportedEncodingException e) {
-			throw new DomainException(e.getMessage(), e);
 		}
-		return hashedPassword;
+        return hashedPassword;
 	}
 
 	public void setSalt(String salt) {

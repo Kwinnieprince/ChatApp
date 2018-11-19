@@ -142,3 +142,13 @@ nav ul li a#actual {
 nav ul li#current {
 	border-bottom: 1px solid black;
 }
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+input {
+	width: 100% !important;
+    margin-left: 0 !important;
+}

@@ -10,7 +10,7 @@ import java.io.IOException;
 public class ChangeStatus extends AsynchroonRequestHandler {
 
     @Override
-    public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
         Person user = (Person) request.getSession().getAttribute("user");
 //        System.out.println(user.getStatus());

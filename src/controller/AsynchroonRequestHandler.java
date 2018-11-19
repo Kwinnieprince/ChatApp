@@ -16,10 +16,7 @@ public abstract class AsynchroonRequestHandler implements RequestHandler{
 
     protected boolean isFromUserWithRole(HttpServletRequest request, Role role) {
         Person person = (Person) request.getSession().getAttribute("user");
-        if (person != null && person.getRole().equals(role)) {
-            return true;
-        }
-        return false;
+        return person != null && person.getRole().equals(role);
     }
 
     @Override
