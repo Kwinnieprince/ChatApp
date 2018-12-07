@@ -53,5 +53,6 @@
 <script type="text/javascript" src="js/status.js"></script>
 <script type="text/javascript" src="js/getFriends.js"></script>
 <script type="text/javascript" src="js/addFriend.js"></script>
+<script type="text/javascript" src="js/chat.js"></script>
 </body>
 </html>

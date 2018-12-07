@@ -10,5 +10,6 @@ function addFriend() {
         xHRObjectAddFriend.open("POST", "Controller?action=AddFriend&friend="+encodeURIComponent(friend), true);
         xHRObjectAddFriend.setRequestHeader("Content-type", "application/x-www-from-urlencoded");
         xHRObjectAddFriend.send();
+        getFriends();
     }
 }

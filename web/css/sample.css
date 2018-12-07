@@ -152,3 +152,7 @@ input {
 	width: 100% !important;
     margin-left: 0 !important;
 }
+
+button {
+	margin: 0 !important;
+}

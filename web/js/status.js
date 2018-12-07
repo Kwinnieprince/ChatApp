@@ -25,6 +25,7 @@ function getStatus() {
     xHRObjectStatus.open("GET", "Controller?action=getStatus");
     xHRObjectStatus.onreadystatechange = getData;
     xHRObjectStatus.send(null);
+    console.log('test');
 }
 
 function getData() {

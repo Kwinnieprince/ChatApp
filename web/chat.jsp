@@ -15,7 +15,12 @@
 </div>
 <p>Change status: <input type="text" id="statusInput" name="statusInput"> <button id="statusButton">Submit</button></p>
 
-<p>friends:</p>
+<h3>Friends <Button id="toggle-friends">Show/hide</Button></h3>
 <ul id="friends"></ul>
 
 <p>Add friend: <input type="text" id="addFriend"><button id="addFriendButton">Add</button></p>
+
+<h3>Chat</h3>
+<div id="chat">
+
+</div>
