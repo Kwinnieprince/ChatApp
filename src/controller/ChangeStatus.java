@@ -13,7 +13,7 @@ public class ChangeStatus extends AsynchroonRequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
         Person user = (Person) request.getSession().getAttribute("user");
-//        System.out.println(user.getStatus());
+//        System.out.println(user.GetStatus());
         if(user != null){
             String status = request.getParameter("statusText");
             try {

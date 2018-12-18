@@ -2,15 +2,13 @@ package domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,6 +22,8 @@ public class Person {
 	private String lastName;
 	private Role role;
 	private String status;
+	private Gender gender;
+	private LocalDate birthday;
 	@JsonIgnore
 	private Set<Person> friends = new HashSet<>();
 
@@ -177,4 +177,22 @@ public class Person {
         this.friends.add(friend);
     }
 
+	public LocalDate getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(LocalDate birthday) {
+		if(birthday.isAfter(LocalDate.now())){
+			throw new IllegalArgumentException();
+		}
+		this.birthday = birthday;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
 }

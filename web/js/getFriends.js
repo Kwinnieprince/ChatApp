@@ -16,7 +16,7 @@ function showData() {
                 friendsHTML = friendsHTML  + "<li onclick=\"showChat(\'" + serverResponse[i].userId + "\')\">" + serverResponse[i].userId + ": " + serverResponse[i].status + "</li>";
             }
             document.getElementById("friends").innerHTML = friendsHTML;
-            setTimeout(getFriends, 20000);
+            setTimeout(getFriends, 2000);
         }
     }
 }

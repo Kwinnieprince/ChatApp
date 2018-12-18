@@ -22,10 +22,9 @@ function changeStatus() {
 let xHRObjectStatus = new XMLHttpRequest();
 
 function getStatus() {
-    xHRObjectStatus.open("GET", "Controller?action=getStatus");
+    xHRObjectStatus.open("GET", "Controller?action=GetStatus");
     xHRObjectStatus.onreadystatechange = getData;
     xHRObjectStatus.send(null);
-    console.log('test');
 }
 
 function getData() {
