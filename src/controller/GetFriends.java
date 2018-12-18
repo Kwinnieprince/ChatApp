@@ -16,7 +16,6 @@ public class GetFriends extends AsynchroonRequestHandler {
         if (user != null) {
             List<Person> friends = new ArrayList<>(user.getFriends());
             String result = this.toJson(friends);
-            response.setContentType("application/json");
             response.getWriter().write(result);
         }
         return null;
