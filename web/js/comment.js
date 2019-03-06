@@ -35,7 +35,7 @@ function writeResponse(text) {
     for (let i = 0; i < result.length; i++) {
         let commentsUL = document.getElementById("topic" + result[i].topicId + "-comments");
         let commentLI = document.createElement('li');
-        let commentTxt = document.createTextNode(result[i].name + " (" + result[i].rating + "/5) : " + result[i].comment)
+        let commentTxt = document.createTextNode(result[i].name + " (" + result[i].rating + "/5) : " + result[i].comment);
         commentLI.appendChild(commentTxt);
         commentsUL.appendChild(commentLI);
     }

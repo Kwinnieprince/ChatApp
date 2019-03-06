@@ -8,7 +8,7 @@ $(document).ready(function () {
 let currentid = "";
 
 function sendMessage(id) {
-    let message = $('#message').val();document
+    let message = $('#message').val();
     $('#message').val("");
     $.post("Controller", {action: "SendText", message: message, userId: id})
 

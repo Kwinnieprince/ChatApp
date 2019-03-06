@@ -1,7 +1,7 @@
 let xHRObjectFriends = new XMLHttpRequest();
 
 function getFriends() {
-    console.log("GetFriends");
+    // console.log("GetFriends");
     xHRObjectFriends.open("GET", "Controller?action=GetFriends");
     xHRObjectFriends.onreadystatechange = showData;
     xHRObjectFriends.send();

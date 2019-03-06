@@ -9,6 +9,7 @@ import db.PersonRepositoryStub;
 public class PersonService {
 	public List<Conversation> conversations = new ArrayList<>();
 	private PersonRepository personRepository = new PersonRepositoryStub();
+	public List<Todo> todos = new ArrayList<>();
 
 	public PersonService(){
 	}

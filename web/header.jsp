@@ -10,21 +10,25 @@
                     <li id="actual"><a href="Controller">Home</a></li>
                     <li><a href="Controller?action=GetBlog">Blog</a></li>
                     <li><a href="Controller?action=GetRegister">Register</a> </li>
+                    <li><a href="Controller?action=ShowTodo">Todo</a> </li>
                 </c:when>
                 <c:when test="${param.title=='Blog'}">
                     <li><a href="Controller">Home</a></li>
                     <li id="actual"><a href="Controller?action=GetBlog">Blog</a> </li>
                     <li><a href="Controller?action=GetRegister">Register</a> </li>
+                    <li><a href="Controller?action=ShowTodo">Todo</a> </li>
                 </c:when>
                 <c:when test="${param.title=='Register'}">
                     <li><a href="Controller">Home</a></li>
                     <li><a href="Controller?action=GetBlog">Blog</a> </li>
                     <li id="actual"><a href="Controller?action=GetRegister">Register</a> </li>
+                    <li><a href="Controller?action=ShowTodo">Todo</a> </li>
                 </c:when>
                 <c:otherwise>
                     <li><a href="Controller">Home</a></li>
                     <li><a href="Controller?action=GetBlog">Blog</a></li>
                     <li><a href="Controller?action=GetRegister">Register</a> </li>
+                    <li><a href="Controller?action=ShowTodo">Todo</a> </li>
                 </c:otherwise>
             </c:choose>
         </ul>
